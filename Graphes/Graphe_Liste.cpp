@@ -42,16 +42,32 @@ std::stack<int> Graphe_Liste::dfs(int debut) {
     while(!pile.empty()){
         int x = pile.top();
         pile.pop();
-
-        // TODO retourne les sommets dans l'ordre d'ouverture, mais on a besoin de l'ordre de fermeture !!!
         resultat.push(x);
-
         for(auto y = tableau_liste_sommet[x].begin(); y != tableau_liste_sommet[x].end(); y++){
             if(!visitee[y->id]){
                 visitee[y->id] = true;
                 pile.push(y->id);
             }
             //else pile.pop();
+        }
+    }
+    return resultat;
+}
+
+std::vector<int> Graphe_Liste::voisins(int a) {
+    std::vector<int> resultat;
+    for(auto i = tableau_liste_sommet[a].begin(); i != tableau_liste_sommet[a].end(); i++){
+        resultat.emplace_back(i->id);
+    }
+    return resultat;
+}
+
+Graphe * Graphe_Liste::transposer() {
+    Graphe_Liste * resultat = new Graphe_Liste(nb_noeuds);
+    for(int i = 0; i < nb_noeuds; i++){
+        std::vector<int> voisinI = voisins(i);
+        for(auto j = voisinI.begin(); j != voisinI.end(); j++){
+            resultat->tableau_liste_sommet[i].emplace_back(*j);
         }
     }
     return resultat;
