@@ -1,9 +1,11 @@
 #include <iostream>
 #include <stack>
+#include <ctime>
 #include "Graphes/Graphe_Liste.h"
 #include "Kosaraju.h"
 #include "Tarjan.h"
 #include "Gabow.h"
+#include "GraphGenerator.h"
 
 void afficher_pile(std::stack<int> pile){
     while(!pile.empty()){
@@ -12,6 +14,31 @@ void afficher_pile(std::stack<int> pile){
     }
     std::cout << std::endl;
 }
+
+void test_gabow(){
+    std::clock_t start;
+    double duration;
+    for(int i = 100; i < 10000; i++){
+        Graphe * graphe = GraphGenerator::genererGraphe(i);
+        start = std::clock();
+        Gabow * gabow = new Gabow(graphe->nb_noeuds);
+        gabow->gabow(graphe);
+        duration = std::clock() - start;
+        std::cout << i << " " << duration <<std::endl;
+    }
+}
+
+int main() {
+    test_gabow();
+    return 0;
+}
+
+
+
+/**
+ * FONCTIONS DE TESTS
+ **/
+
 
 /**
  * Represente l'arbre page 83 des slides
@@ -171,12 +198,4 @@ void test_Gabow_liste(){
         }
         std::cout << std::endl;
     }
-}
-
-int main() {
-    test_DFS_liste();
-    test_dfs_kosaraju();
-    //test_Kosaraju_liste();
-    test_Gabow_liste();
-    return 0;
 }
