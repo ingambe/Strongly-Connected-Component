@@ -5,12 +5,11 @@
 #ifndef GRAPHES_GRAPHE_LISTE_H
 #define GRAPHES_GRAPHE_LISTE_H
 
-#include "Sommet.h"
 #include "Graphe.h"
 
 class Graphe_Liste : public Graphe {
 private:
-    std::vector<Sommet> *tableau_liste_sommet;
+    std::vector<int> *tableau_liste_sommet;
 public:
     Graphe_Liste(int nb_noeuds);
     Graphe_Liste(Graphe_Liste &a);
@@ -19,6 +18,7 @@ public:
     std::stack<int> dfs(int debut);
     std::vector<int> voisins(int a);
     Graphe * transposer();
+    std::vector<int> * getTableau();
 };
 
 

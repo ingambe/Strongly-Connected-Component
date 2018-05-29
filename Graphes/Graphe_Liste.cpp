@@ -6,12 +6,12 @@
 
 Graphe_Liste::Graphe_Liste(int nb_noeuds) {
     this->nb_noeuds = nb_noeuds;
-    this->tableau_liste_sommet = new std::vector<Sommet>[nb_noeuds];
+    this->tableau_liste_sommet = new std::vector<int>[nb_noeuds];
 }
 
 Graphe_Liste::Graphe_Liste(Graphe_Liste &a) {
     this->nb_noeuds = a.nb_noeuds;
-    this->tableau_liste_sommet = new std::vector<Sommet>[nb_noeuds];
+    this->tableau_liste_sommet = new std::vector<int>[nb_noeuds];
     for(int i = 0; i < nb_noeuds; i++){
         for(auto j = a.tableau_liste_sommet[i].begin(); j != a.tableau_liste_sommet[i].end(); j++){
             tableau_liste_sommet[i].push_back(*j);
@@ -43,10 +43,11 @@ std::stack<int> Graphe_Liste::dfs(int debut) {
         int x = pile.top();
         pile.pop();
         resultat.push(x);
-        for(auto y = tableau_liste_sommet[x].begin(); y != tableau_liste_sommet[x].end(); y++){
-            if(!visitee[y->id]){
-                visitee[y->id] = true;
-                pile.push(y->id);
+        std::vector<int> lesVoisins = voisins(x);
+        for(auto y = lesVoisins.begin(); y != lesVoisins.end(); y++){
+            if(!visitee[*y]){
+                visitee[*y] = true;
+                pile.push(*y);
             }
             //else pile.pop();
         }
@@ -55,20 +56,20 @@ std::stack<int> Graphe_Liste::dfs(int debut) {
 }
 
 std::vector<int> Graphe_Liste::voisins(int a) {
-    std::vector<int> resultat;
-    for(auto i = tableau_liste_sommet[a].begin(); i != tableau_liste_sommet[a].end(); i++){
-        resultat.emplace_back(i->id);
+    return tableau_liste_sommet[a];
+}
+
+Graphe * Graphe_Liste::transposer() {
+    Graphe * resultat = new Graphe_Liste(nb_noeuds);
+    for(int i = 0; i < nb_noeuds; i++){
+        std::vector<int> voisin = this->voisins(i);
+        for(auto j = voisin.begin(); j != voisin.end(); j++){
+            resultat->ajouterLien(*j,i);
+        }
     }
     return resultat;
 }
 
-Graphe * Graphe_Liste::transposer() {
-    Graphe_Liste * resultat = new Graphe_Liste(nb_noeuds);
-    for(int i = 0; i < nb_noeuds; i++){
-        std::vector<int> voisinI = voisins(i);
-        for(auto j = voisinI.begin(); j != voisinI.end(); j++){
-            resultat->tableau_liste_sommet[i].emplace_back(*j);
-        }
-    }
-    return resultat;
+std::vector<int> * Graphe_Liste::getTableau() {
+    return tableau_liste_sommet;
 }

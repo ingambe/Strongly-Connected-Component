@@ -4,6 +4,18 @@
 
 #include "Kosaraju.h"
 
+std::stack<int> supprimerElementPile(std::stack<int> pile, int element){
+    std::stack<int> resultat;
+    while(!pile.empty()){
+        int top = pile.top();
+        pile.pop();
+        if(top != element){
+            resultat.push(top);
+        }
+    }
+    return resultat;
+}
+
 std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
     std::vector<std::vector<int>> CFC;
     std::stack<int> pile;
@@ -27,20 +39,26 @@ std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
     }
 
     Graphe * transpose = graphe->transposer();
-    // permet d'eviter l'operation complexe de supprimer un element de la pile de la DFS
-    bool aSupprS[graphe->nb_noeuds] = {0};
+    bool element_suppr[graphe->nb_noeuds] = {0};
     while(!pile.empty()){
         int v = pile.top();
         pile.pop();
-        if(!aSupprS[v]) {
-            std::stack<int> dfs = transpose->dfs(v);
-            std::vector<int> aPush;
-            for (int i = 0; i < dfs.size(); i++) {
-                int tmp = dfs.top();
-                dfs.pop();
-                aSupprS[tmp] = true;
+        std::stack<int> dfs = transpose->dfs(v);
+        std::vector<int> aPush;
+        if(!element_suppr[v]) {
+            aPush.push_back(v);
+            element_suppr[v] = true;
+        }
+        for (int i = 0; i < dfs.size(); i++) {
+            int tmp = dfs.top();
+            dfs.pop();
+            if(!element_suppr[tmp]) {
                 aPush.emplace_back(tmp);
+                pile = supprimerElementPile(pile, tmp);
+                element_suppr[tmp] = true;
             }
+        }
+        if(!aPush.empty()) {
             CFC.emplace_back(aPush);
         }
     }
