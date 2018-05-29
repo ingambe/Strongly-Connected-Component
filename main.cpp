@@ -176,6 +176,7 @@ void test_Gabow_liste(){
 int main() {
     test_DFS_liste();
     test_dfs_kosaraju();
+    //test_Kosaraju_liste();
     test_Gabow_liste();
     return 0;
 }

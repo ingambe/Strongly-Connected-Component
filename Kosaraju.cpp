@@ -39,6 +39,7 @@ std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
     }
 
     Graphe * transpose = graphe->transposer();
+
     bool element_suppr[graphe->nb_noeuds] = {0};
     while(!pile.empty()){
         int v = pile.top();
