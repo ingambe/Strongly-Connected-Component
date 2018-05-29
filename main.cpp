@@ -3,6 +3,7 @@
 #include "Graphes/Graphe_Liste.h"
 #include "Kosaraju.h"
 #include "Tarjan.h"
+#include "Gabow.h"
 
 void afficher_pile(std::stack<int> pile){
     while(!pile.empty()){
@@ -139,9 +140,42 @@ void test_Tarjan_liste(){
 }
 
 
+/**
+ * Graphe page 101
+ */
+void test_Gabow_liste(){
+    Graphe_Liste * graphe = new Graphe_Liste(8);
+    graphe->ajouterLien(0,1);
+    graphe->ajouterLien(1,2);
+    graphe->ajouterLien(1,4);
+    graphe->ajouterLien(1,5);
+    graphe->ajouterLien(2,3);
+    graphe->ajouterLien(2,6);
+    graphe->ajouterLien(3,2);
+    graphe->ajouterLien(3,7);
+    graphe->ajouterLien(4,0);
+    graphe->ajouterLien(4,5);
+    graphe->ajouterLien(5,6);
+    graphe->ajouterLien(6,5);
+    graphe->ajouterLien(7,3);
+    graphe->ajouterLien(7,6);
+    Gabow * gabow = new Gabow(graphe->nb_noeuds);
+    std::vector<std::vector<int>> * resultat = gabow->gabow(graphe);
+    std::cout << "nombre de CFC : " << resultat->size() << std::endl;
+    int compteur = 0;
+    for(auto i = resultat->begin(); i != resultat->end(); i++){
+        std::cout << "CFC numero " << compteur << std::endl;
+        compteur++;
+        for(auto j = i->begin(); j!= i->end(); *j++){
+            std::cout << *j << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
 int main() {
     test_DFS_liste();
     test_dfs_kosaraju();
-    test_Tarjan_liste();
+    test_Gabow_liste();
     return 0;
 }
