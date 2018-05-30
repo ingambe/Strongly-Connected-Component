@@ -47,11 +47,9 @@ std::stack<int> Graphe_Liste::dfs(int debut) {
         resultat.push(x);
         std::vector<int> lesVoisins = voisins(x);
         for(auto y = lesVoisins.begin(); y != lesVoisins.end(); y++){
-            if(!visitee[*y]){
+            if(!visitee[*y]) {
                 visitee[*y] = true;
                 pile.push(*y);
-            } else {
-                pile.pop();
             }
         }
     }
@@ -71,8 +69,4 @@ Graphe * Graphe_Liste::transposer() {
         }
     }
     return resultat;
-}
-
-std::vector<int> * Graphe_Liste::getTableau() {
-    return tableau_liste_sommet;
 }
