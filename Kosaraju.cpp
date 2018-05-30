@@ -5,15 +5,15 @@
 #include "Kosaraju.h"
 
 std::stack<int> supprimerElementPile(std::stack<int> pile, int element){
-    std::stack<int> resultat;
+    std::stack<int> tmp;
     while(!pile.empty()){
         int top = pile.top();
         pile.pop();
         if(top != element){
-            resultat.push(top);
+            tmp.push(top);
         }
     }
-    return resultat;
+    return tmp;
 }
 
 std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
@@ -40,27 +40,23 @@ std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
 
     Graphe * transpose = graphe->transposer();
 
-    bool element_suppr[graphe->nb_noeuds] = {0};
     while(!pile.empty()){
         int v = pile.top();
         pile.pop();
         std::stack<int> dfs = transpose->dfs(v);
         std::vector<int> aPush;
-        if(!element_suppr[v]) {
-            aPush.push_back(v);
-            element_suppr[v] = true;
-        }
+        aPush.push_back(v);
         for (int i = 0; i < dfs.size(); i++) {
             int tmp = dfs.top();
             dfs.pop();
-            if(!element_suppr[tmp]) {
-                aPush.emplace_back(tmp);
-                pile = supprimerElementPile(pile, tmp);
-                element_suppr[tmp] = true;
-            }
+            aPush.emplace_back(tmp);
         }
         if(!aPush.empty()) {
             CFC.emplace_back(aPush);
+            for(auto i = aPush.begin(); i != aPush.end(); i++){
+                pile = supprimerElementPile(pile, *i);
+                transpose->supprimerSommet(*i);
+            }
         }
     }
     return CFC;

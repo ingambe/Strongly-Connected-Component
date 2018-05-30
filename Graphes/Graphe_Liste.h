@@ -18,6 +18,7 @@ public:
     std::stack<int> dfs(int debut);
     std::vector<int> voisins(int a);
     Graphe * transposer();
+    void supprimerSommet(int sommet);
 };
 
 

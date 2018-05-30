@@ -17,6 +17,7 @@ public:
     virtual std::vector<int> voisins(int a) = 0;
     int getNbNoeuds();
     virtual Graphe * transposer() = 0;
+    virtual void supprimerSommet(int noeud) = 0;
 };
 
 

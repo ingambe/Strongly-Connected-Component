@@ -196,5 +196,6 @@ void test_gabow(){
 
 int main() {
     test_Kosaraju_liste();
+    //test_DFS_liste();
     return 0;
 }

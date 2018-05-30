@@ -29,7 +29,6 @@ Graphe_Liste::~Graphe_Liste() {
 
 void Graphe_Liste::ajouterLien(int a, int b) {
     tableau_liste_sommet[a].emplace_back(b);
-    std::sort(tableau_liste_sommet[a].begin(), tableau_liste_sommet[a].end());
 }
 
 std::stack<int> Graphe_Liste::dfs(int debut) {
@@ -69,4 +68,14 @@ Graphe * Graphe_Liste::transposer() {
         }
     }
     return resultat;
+}
+
+void Graphe_Liste::supprimerSommet(int sommet) {
+    for(int i = 0; i < nb_noeuds; i++){
+        if(i == sommet){
+            tableau_liste_sommet[i].clear();
+        } else {
+            tableau_liste_sommet[i].erase(std::remove(tableau_liste_sommet[i].begin(), tableau_liste_sommet[i].end(), sommet), tableau_liste_sommet[i].end());
+        }
+    }
 }
