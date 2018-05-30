@@ -1,15 +1,12 @@
 #include <iostream>
 #include <stack>
 #include <ctime>
-#include <chrono>
 #include "Graphes/Graphe_Liste.h"
 #include "Kosaraju.h"
 #include "Tarjan.h"
 #include "Gabow.h"
 #include "GraphGenerator.h"
 #include "Graphes/Graphe_Adjacence.h"
-
-typedef std::chrono::high_resolution_clock Clock;
 
 void afficher_pile(std::stack<int> pile){
     while(!pile.empty()){
@@ -192,89 +189,88 @@ void test_Gabow_liste(){
 // LISTES
 
 void test_liste_gabow(){
+    std::clock_t start;
+    double duration;
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheListe(i);
-        auto t1 = Clock::now();
+        start = std::clock();
         Gabow * gabow = new Gabow(graphe->nb_noeuds);
         gabow->gabow(graphe);
-        auto t2 = Clock::now();
-        std::cout << i << " " <<  std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() <<std::endl;
+        duration = std::clock() - start;
+        std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
     }
 }
 
 
 void test_liste_kosaraju(){
+    std::clock_t start;
+    double duration;
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheListe(i);
-        auto t1 = Clock::now();
+        start = std::clock();
         Kosaraju::kosaraju(graphe);
-        auto t2 = Clock::now();
-        std::cout << i << " " <<  std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() <<std::endl;
+        duration = std::clock() - start;
+        std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
     }
 }
 
 
 void test_liste_tarjan(){
+    std::clock_t start;
+    double duration;
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheListe(i);
-        auto t1 = Clock::now();
+        start = std::clock();
         Tarjan tarjan;
         tarjan.tarjan(graphe);
-        auto t2 = Clock::now();
-        std::cout << i << " " <<  std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() <<std::endl;
+        duration = std::clock() - start;
+        std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
     }
 }
 
 // ADJACENCE
 
 void test_adjacence_gabow(){
+    std::clock_t start;
+    double duration;
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheAdjacence(i);
-        auto t1 = Clock::now();
+        start = std::clock();
         Gabow * gabow = new Gabow(graphe->nb_noeuds);
         gabow->gabow(graphe);
-        auto t2 = Clock::now();
-        std::cout << i << " " <<  std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() <<std::endl;
+        duration = std::clock() - start;
+        std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
     }
 }
 
 
 void test_adjacence_kosaraju(){
+    std::clock_t start;
+    double duration;
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheAdjacence(i);
-        auto t1 = Clock::now();
+        start = std::clock();
         Kosaraju::kosaraju(graphe);
-        auto t2 = Clock::now();
-        std::cout << i << " " <<  std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() <<std::endl;
+        duration = std::clock() - start;
+        std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
     }
 }
 
 
 void test_adjacence_tarjan(){
+    std::clock_t start;
+    double duration;
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheAdjacence(i);
-        auto t1 = Clock::now();
+        start = std::clock();
         Tarjan tarjan;
         tarjan.tarjan(graphe);
-        auto t2 = Clock::now();
-        std::cout << i << " " <<  std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() <<std::endl;
+        duration = std::clock() - start;
+        std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
     }
 }
 
 int main(int argc, char *argv[]) {
-    printf("----------------Programme de test d'algorithme de CFC pour le cour de Mr Regin----------------\n");
-    printf("usage : ./executable type algorithme\n");
-    printf("exemple : ./graphes liste kosaraju\n\n");
-    printf("Liste des arguments :\n\n");
-    printf("\tType Representation :\n");
-    printf("\t-liste : graphe de liste d\'ajacence\n");
-    printf("\t-adjacence : graphe de matrice d\'ajacence\n");
-    printf("\n");
-    printf("\tAlgorithme:\n");
-    printf("\t-gabow : algorithme gabow\n");
-    printf("\t-kosaraju : algorithme kosaraju\n");
-    printf("\t-tarjan : algorithme tarjan\n");
-    printf("\n");
 
     if(argc > 1){
         if(std::string(argv[1]) == "liste"){
@@ -294,6 +290,20 @@ int main(int argc, char *argv[]) {
                 test_adjacence_tarjan();
             }
         }
+    } else {
+        printf("----------------Programme de test d'algorithme de CFC pour le cour de Mr Regin----------------\n");
+        printf("usage : ./executable type algorithme\n");
+        printf("exemple : ./graphes liste kosaraju\n\n");
+        printf("Liste des arguments :\n\n");
+        printf("\tType Representation :\n");
+        printf("\t-liste : graphe de liste d\'ajacence\n");
+        printf("\t-adjacence : graphe de matrice d\'ajacence\n");
+        printf("\n");
+        printf("\tAlgorithme:\n");
+        printf("\t-gabow : algorithme gabow\n");
+        printf("\t-kosaraju : algorithme kosaraju\n");
+        printf("\t-tarjan : algorithme tarjan\n");
+        printf("\n");
     }
     return 0;
 }
