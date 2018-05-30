@@ -11,7 +11,8 @@
 
 class GraphGenerator {
 public:
-    static Graphe * genererGraphe(int nb_lien);
+    static Graphe * genererGrapheListe(int nb_lien);
+    static Graphe * genererGrapheAdjacence(int nb_lien);
 };
 
 
