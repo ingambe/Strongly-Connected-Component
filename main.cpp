@@ -6,6 +6,7 @@
 #include "Tarjan.h"
 #include "Gabow.h"
 #include "GraphGenerator.h"
+#include "Graphes/Graphe_Adjacence.h"
 
 void afficher_pile(std::stack<int> pile){
     while(!pile.empty()){
@@ -71,7 +72,7 @@ void test_dfs_kosaraju(){
  * Graphe page 101
  */
 void test_Kosaraju_liste(){
-    Graphe_Liste * graphe = new Graphe_Liste(8);
+    Graphe_Adjacence * graphe = new Graphe_Adjacence(8);
     graphe->ajouterLien(0,1);
     graphe->ajouterLien(1,2);
     graphe->ajouterLien(1,4);
