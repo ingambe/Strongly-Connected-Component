@@ -72,6 +72,34 @@ void test_dfs_kosaraju(){
  * Graphe page 101
  */
 void test_Kosaraju_liste(){
+    Graphe_Liste * graphe = new Graphe_Liste(8);
+    graphe->ajouterLien(0,1);
+    graphe->ajouterLien(1,2);
+    graphe->ajouterLien(1,4);
+    graphe->ajouterLien(1,5);
+    graphe->ajouterLien(2,3);
+    graphe->ajouterLien(2,6);
+    graphe->ajouterLien(3,2);
+    graphe->ajouterLien(3,7);
+    graphe->ajouterLien(4,0);
+    graphe->ajouterLien(4,5);
+    graphe->ajouterLien(5,6);
+    graphe->ajouterLien(6,5);
+    graphe->ajouterLien(7,3);
+    graphe->ajouterLien(7,6);
+    std::vector<std::vector<int>> kosaraju = Kosaraju::kosaraju(graphe);
+    std::cout << "nombre de CFC : " << kosaraju.size() << std::endl;
+    int compteur = 0;
+    for(auto i = kosaraju.begin(); i != kosaraju.end(); i++){
+        std::cout << "CFC numero " << compteur << std::endl;
+        compteur++;
+        for(auto j = i->begin(); j!= i->end(); *j++){
+            std::cout << *j << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+void test_Kosaraju_adjacence(){
     Graphe_Adjacence * graphe = new Graphe_Adjacence(8);
     graphe->ajouterLien(0,1);
     graphe->ajouterLien(1,2);

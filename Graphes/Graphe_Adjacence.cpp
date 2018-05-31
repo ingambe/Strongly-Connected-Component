@@ -73,7 +73,7 @@ Graphe *Graphe_Adjacence::transposer() {
     Graphe_Adjacence * transpose = new Graphe_Adjacence(nb_noeuds);
     for(int i = 0; i < nb_noeuds; i++){
         for(int j = 0; j < nb_noeuds; j++){
-            transpose->matrice[(i * nb_noeuds) + j] = !(matrice[(i * nb_noeuds) + j]);
+            transpose->matrice[(i * nb_noeuds) + j] = matrice[(j * nb_noeuds) + i];
         }
     }
     return transpose;
