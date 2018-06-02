@@ -358,7 +358,7 @@ int main(int argc, char *argv[]) {
         printf("\t-kosaraju : algorithme kosaraju\n");
         printf("\t-tarjan : algorithme tarjan\n");
         printf("\n");
-        test_Kosaraju_liste();
+        test_Kosaraju_Liste2();
     }
     return 0;
 }

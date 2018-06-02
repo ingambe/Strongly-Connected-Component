@@ -9,7 +9,7 @@
 
 class Graphe_Liste : public Graphe {
 private:
-    std::vector<int> *tableau_liste_sommet;
+    std::set<int> *tableau_liste_sommet;
 public:
     Graphe_Liste(int nb_noeuds);
     Graphe_Liste(Graphe_Liste &a);

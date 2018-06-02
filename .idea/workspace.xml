@@ -11,16 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b575c1d1-2485-428c-9493-427b220ae75e" name="Default" comment="debug transposition">
+    <list default="true" id="b575c1d1-2485-428c-9493-427b220ae75e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graphes/Graphe.h" beforeDir="false" afterPath="$PROJECT_DIR$/Graphes/Graphe.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphes/Graphe_Adjacence.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Graphes/Graphe_Adjacence.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphes/Graphe_Adjacence.h" beforeDir="false" afterPath="$PROJECT_DIR$/Graphes/Graphe_Adjacence.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graphes/Graphe_Liste.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Graphes/Graphe_Liste.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graphes/Graphe_Liste.h" beforeDir="false" afterPath="$PROJECT_DIR$/Graphes/Graphe_Liste.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kosaraju.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Kosaraju.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graphes.dir/Graphes/Graphe_Adjacence.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graphes.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graphes.dir/Graphes/Graphe_Liste.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graphes.dir/Kosaraju.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graphes.dir/Kosaraju.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graphes.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graphes.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/graphes" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/graphes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -38,8 +37,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="360" column="29" selection-start-line="360" selection-start-column="29" selection-end-line="360" selection-end-column="29" />
+            <state relative-caret-position="432">
+              <caret line="360" column="30" selection-start-line="360" selection-start-column="30" selection-end-line="360" selection-end-column="30" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -71,8 +70,8 @@
       <file leaf-file-name="Graphe.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Graphes/Graphe.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+            <state relative-caret-position="135">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -80,11 +79,8 @@
       <file leaf-file-name="Graphe_Liste.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Graphes/Graphe_Liste.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
-              <folding>
-                <element signature="e#42#62#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="403">
+              <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -110,8 +106,8 @@
       <file leaf-file-name="Graphe_Liste.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Graphes/Graphe_Liste.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+            <state relative-caret-position="165">
+              <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -142,10 +138,10 @@
         <option value="$PROJECT_DIR$/GraphGenerator.h" />
         <option value="$PROJECT_DIR$/Graphes/Graphe_Adjacence.cpp" />
         <option value="$PROJECT_DIR$/Graphes/Graphe_Adjacence.h" />
-        <option value="$PROJECT_DIR$/Graphes/Graphe.h" />
-        <option value="$PROJECT_DIR$/Graphes/Graphe_Liste.h" />
-        <option value="$PROJECT_DIR$/Graphes/Graphe_Liste.cpp" />
         <option value="$PROJECT_DIR$/Kosaraju.cpp" />
+        <option value="$PROJECT_DIR$/Graphes/Graphe_Liste.h" />
+        <option value="$PROJECT_DIR$/Graphes/Graphe.h" />
+        <option value="$PROJECT_DIR$/Graphes/Graphe_Liste.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -226,7 +222,7 @@
       <workItem from="1527810078072" duration="662000" />
       <workItem from="1527858424758" duration="237000" />
       <workItem from="1527859457211" duration="1589000" />
-      <workItem from="1527874534104" duration="761000" />
+      <workItem from="1527874534104" duration="1173000" />
     </task>
     <task id="LOCAL-00001" summary="debug">
       <created>1527680286522</created>
@@ -277,23 +273,30 @@
       <option name="project" value="LOCAL" />
       <updated>1527810253204</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="debug dfs">
+      <created>1527900008519</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1527900008519</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18946000" />
+    <option name="totallyTimeSpent" value="19358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="993" y="25" width="927" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2909292" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2909292" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3286334" />
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -321,7 +324,8 @@
     <MESSAGE value="Modif timer" />
     <MESSAGE value="Graphes" />
     <MESSAGE value="debug transposition" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug transposition" />
+    <MESSAGE value="debug dfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug dfs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -350,9 +354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
           <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="e#42#62#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -408,9 +409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="53" />
-          <folding>
-            <element signature="e#42#62#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -459,9 +457,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="53" />
-          <folding>
-            <element signature="e#42#62#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -564,30 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Graphes/Graphe.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Graphes/Graphe_Liste.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Graphes/Graphe_Liste.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
-          <folding>
-            <element signature="e#42#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Graphes/Graphe_Adjacence.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -609,10 +580,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Graphes/Graphe.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphes/Graphe_Liste.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphes/Graphe_Liste.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="360" column="29" selection-start-line="360" selection-start-column="29" selection-end-line="360" selection-end-column="29" />
+        <state relative-caret-position="432">
+          <caret line="360" column="30" selection-start-line="360" selection-start-column="30" selection-end-line="360" selection-end-column="30" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

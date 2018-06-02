@@ -2,20 +2,19 @@
 // Created by ingambe on 28/05/18.
 //
 
-#include <algorithm>
 #include "Graphe_Liste.h"
 
 Graphe_Liste::Graphe_Liste(int nb_noeuds) {
     this->nb_noeuds = nb_noeuds;
-    this->tableau_liste_sommet = new std::vector<int>[nb_noeuds];
+    this->tableau_liste_sommet = new std::set<int>[nb_noeuds];
 }
 
 Graphe_Liste::Graphe_Liste(Graphe_Liste &a) {
     this->nb_noeuds = a.nb_noeuds;
-    this->tableau_liste_sommet = new std::vector<int>[nb_noeuds];
+    this->tableau_liste_sommet = new std::set<int>[nb_noeuds];
     for(int i = 0; i < nb_noeuds; i++){
         for(auto j = a.tableau_liste_sommet[i].begin(); j != a.tableau_liste_sommet[i].end(); j++){
-            tableau_liste_sommet[i].push_back(*j);
+            tableau_liste_sommet[i].insert(*j);
         }
     }
 }
@@ -28,7 +27,7 @@ Graphe_Liste::~Graphe_Liste() {
 }
 
 void Graphe_Liste::ajouterLien(int a, int b) {
-    tableau_liste_sommet[a].emplace_back(b);
+    tableau_liste_sommet[a].insert(b);
 }
 
 std::stack<int> Graphe_Liste::dfs(int debut, bool * visitee) {
@@ -52,7 +51,11 @@ std::stack<int> Graphe_Liste::dfs(int debut, bool * visitee) {
 }
 
 std::vector<int> Graphe_Liste::voisins(int a) {
-    return tableau_liste_sommet[a];
+    std::vector<int> voisins;
+    for(auto i = tableau_liste_sommet[a].begin(); i != tableau_liste_sommet[a].end(); i++){
+        voisins.emplace_back(*i);
+    }
+    return voisins;
 }
 
 Graphe * Graphe_Liste::transposer() {
@@ -71,7 +74,7 @@ void Graphe_Liste::supprimerSommet(int sommet) {
         if(i == sommet){
             tableau_liste_sommet[i].clear();
         } else {
-            tableau_liste_sommet[i].erase(std::remove(tableau_liste_sommet[i].begin(), tableau_liste_sommet[i].end(), sommet), tableau_liste_sommet[i].end());
+            tableau_liste_sommet[i].erase(sommet);
         }
     }
 }

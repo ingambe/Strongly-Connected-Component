@@ -8,6 +8,7 @@
 
 #include <stack>
 #include <vector>
+#include <set>
 
 class Graphe {
 public:
