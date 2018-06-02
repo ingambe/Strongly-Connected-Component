@@ -35,12 +35,8 @@ void Graphe_Adjacence::ajouterLien(int a, int b) {
     matrice[(a * nb_noeuds) + b] = true;
 }
 
-std::stack<int> Graphe_Adjacence::dfs(int debut) {
+std::stack<int> Graphe_Adjacence::dfs(int debut, bool * visitee) {
     std::stack<int> resultat;
-    bool visitee[nb_noeuds];
-    for(int i = 0; i < nb_noeuds; i++){
-        visitee[i] = false;
-    }
     std::stack<int> pile;
     pile.push(debut);
     visitee[debut] = true;

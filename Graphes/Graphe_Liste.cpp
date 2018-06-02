@@ -31,12 +31,8 @@ void Graphe_Liste::ajouterLien(int a, int b) {
     tableau_liste_sommet[a].emplace_back(b);
 }
 
-std::stack<int> Graphe_Liste::dfs(int debut) {
+std::stack<int> Graphe_Liste::dfs(int debut, bool * visitee) {
     std::stack<int> resultat;
-    bool visitee[nb_noeuds];
-    for(int i = 0; i < nb_noeuds; i++){
-        visitee[i] = false;
-    }
     std::stack<int> pile;
     pile.push(debut);
     visitee[debut] = true;

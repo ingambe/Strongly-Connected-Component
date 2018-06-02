@@ -20,6 +20,7 @@ std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
     std::vector<std::vector<int>> CFC;
     std::stack<int> pile;
     bool parcouru[graphe->getNbNoeuds()] = {0};
+    bool visitee[graphe->nb_noeuds] = {0};
     int aParcourir = 0;
     while(pile.size() < graphe->getNbNoeuds()){
         for(int i = 0; i < graphe->getNbNoeuds(); i++){
@@ -29,7 +30,7 @@ std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
                 break;
             }
         }
-        std::stack<int> dfs = graphe->dfs(aParcourir);
+        std::stack<int> dfs = graphe->dfs(aParcourir, visitee);
         while(!dfs.empty()){
             int tmp = dfs.top();
             dfs.pop();
@@ -40,10 +41,13 @@ std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
 
     Graphe * transpose = graphe->transposer();
 
+    for(int i = 0; i < graphe->nb_noeuds; i++){
+        visitee[i] = false;
+    }
     while(!pile.empty()){
         int v = pile.top();
         pile.pop();
-        std::stack<int> dfs = transpose->dfs(v);
+        std::stack<int> dfs = transpose->dfs(v, visitee);
         std::vector<int> aPush;
         aPush.push_back(v);
         for (int i = 0; i < dfs.size(); i++) {

@@ -38,7 +38,7 @@ void test_DFS_liste(){
     graphe.ajouterLien(3,7);
     graphe.ajouterLien(6,10);
     graphe.ajouterLien(6,11);
-    std::stack<int> dfs = graphe.dfs(0);
+    std::stack<int> dfs = graphe.dfs(0, new bool[12]{0});
     std::cout << "La taille doit etre de 12 : " << dfs.size() << std::endl;
     afficher_pile(dfs);
 }
@@ -63,7 +63,7 @@ void test_dfs_kosaraju(){
     graphe->ajouterLien(6,5);
     graphe->ajouterLien(7,3);
     graphe->ajouterLien(7,6);
-    std::stack<int> dfs = graphe->dfs(0);
+    std::stack<int> dfs = graphe->dfs(0, new bool[8]{0});
     std::cout << "La taille doit etre de 8 : " << dfs.size() << std::endl;
     afficher_pile(dfs);
 }
@@ -298,6 +298,32 @@ void test_adjacence_tarjan(){
     }
 }
 
+void test_Kosaraju_Liste2(){
+    Graphe_Liste * graphe = new Graphe_Liste(8);
+    graphe->ajouterLien(0,1);
+    graphe->ajouterLien(4,0);
+    graphe->ajouterLien(0,5);
+    graphe->ajouterLien(1,5);
+    graphe->ajouterLien(5,4);
+    graphe->ajouterLien(1,2);
+    graphe->ajouterLien(5,6);
+    graphe->ajouterLien(6,2);
+    graphe->ajouterLien(2,6);
+    graphe->ajouterLien(2,3);
+    graphe->ajouterLien(7,6);
+    std::vector<std::vector<int>> kosaraju = Kosaraju::kosaraju(graphe);
+    std::cout << "nombre de CFC : " << kosaraju.size() << std::endl;
+    int compteur = 0;
+    for(auto i = kosaraju.begin(); i != kosaraju.end(); i++){
+        std::cout << "CFC numero " << compteur << std::endl;
+        compteur++;
+        for(auto j = i->begin(); j!= i->end(); *j++){
+            std::cout << *j << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
 int main(int argc, char *argv[]) {
 
     if(argc > 1){
@@ -332,6 +358,7 @@ int main(int argc, char *argv[]) {
         printf("\t-kosaraju : algorithme kosaraju\n");
         printf("\t-tarjan : algorithme tarjan\n");
         printf("\n");
+        test_Kosaraju_liste();
     }
     return 0;
 }

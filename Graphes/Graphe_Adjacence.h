@@ -15,7 +15,7 @@ public:
     Graphe_Adjacence(Graphe_Adjacence &a);
     ~Graphe_Adjacence();
     void ajouterLien(int a, int b);
-    std::stack<int> dfs(int debut);
+    std::stack<int> dfs(int debut, bool * visitee);
     std::vector<int> voisins(int a);
     Graphe * transposer();
     void supprimerSommet(int sommet);

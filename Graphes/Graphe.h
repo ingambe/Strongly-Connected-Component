@@ -13,7 +13,7 @@ class Graphe {
 public:
     int nb_noeuds;
     virtual void ajouterLien(int a, int b) = 0;
-    virtual std::stack<int> dfs(int debut) = 0;
+    virtual std::stack<int> dfs(int debut, bool * visitee) = 0;
     virtual std::vector<int> voisins(int a) = 0;
     int getNbNoeuds();
     virtual Graphe * transposer() = 0;
