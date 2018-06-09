@@ -12,7 +12,7 @@ Gabow::Gabow(int nb_noeuds) {
         num[i] = 0;
         placeeCFC[i] = false;
     }
-    CFC = new std::vector<std::vector<int>>();
+    CFC_vector = new std::vector<std::set<int>>();
 }
 
 Gabow::~Gabow() {
@@ -20,6 +20,14 @@ Gabow::~Gabow() {
         delete[] num;
     }
     num = NULL;
+    if(placeeCFC != NULL){
+        delete[] placeeCFC;
+    }
+    placeeCFC = NULL;
+    if(CFC_vector != NULL){
+        delete[] CFC_vector;
+    }
+    CFC_vector = NULL;
 }
 
 void Gabow::visit(Graphe * graphe, int v) {
@@ -39,29 +47,29 @@ void Gabow::visit(Graphe * graphe, int v) {
     }
     if(v == P.top()){
         int x;
-        std::vector<int> tmp;
+        std::set<int> tmp;
         if(!placeeCFC[v]) {
-            tmp.emplace_back(v);
+            tmp.insert(v);
             placeeCFC[v] = true;
         }
         while(v != S.top()){
             x= S.top();
             if(!placeeCFC[x]) {
-                tmp.emplace_back(x);
+                tmp.insert(x);
                 placeeCFC[x] = true;
             }
             S.pop();
         }
-        CFC->emplace_back(tmp);
+        CFC_vector->emplace_back(tmp);
         P.pop();
     }
 }
 
-std::vector<std::vector<int>> * Gabow::gabow(Graphe *graphe) {
+std::vector<std::set<int>> * Gabow::CFC(Graphe *graphe) {
     for(int i = 0; i < graphe->nb_noeuds; i++){
         if(num[i] == 0){
             visit(graphe, i);
         }
     }
-    return CFC;
+    return CFC_vector;
 }

@@ -16,8 +16,8 @@ std::stack<int> supprimerElementPile(std::stack<int> pile, int element){
     return tmp;
 }
 
-std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
-    std::vector<std::vector<int>> CFC;
+std::vector<std::set<int>> * Kosaraju::CFC(Graphe * graphe) {
+    std::vector<std::set<int>> * CFC = new std::vector<std::set<int>>();
     std::stack<int> pile;
     bool parcouru[graphe->getNbNoeuds()] = {0};
     bool visitee[graphe->nb_noeuds] = {0};
@@ -48,15 +48,15 @@ std::vector<std::vector<int>> Kosaraju::kosaraju(Graphe * graphe) {
         int v = pile.top();
         pile.pop();
         std::stack<int> dfs = transpose->dfs(v, visitee);
-        std::vector<int> aPush;
-        aPush.push_back(v);
+        std::set<int> aPush;
+        aPush.insert(v);
         for (int i = 0; i < dfs.size(); i++) {
             int tmp = dfs.top();
             dfs.pop();
-            aPush.emplace_back(tmp);
+            aPush.insert(tmp);
         }
         if(!aPush.empty()) {
-            CFC.emplace_back(aPush);
+            CFC->emplace_back(aPush);
             for(auto i = aPush.begin(); i != aPush.end(); i++){
                 pile = supprimerElementPile(pile, *i);
                 transpose->supprimerSommet(*i);

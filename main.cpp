@@ -2,9 +2,9 @@
 #include <stack>
 #include <ctime>
 #include "Graphes/Graphe_Liste.h"
-#include "Kosaraju.h"
-#include "Tarjan.h"
-#include "Gabow.h"
+#include "CFC/Kosaraju.h"
+#include "CFC/Tarjan.h"
+#include "CFC/Gabow.h"
 #include "GraphGenerator.h"
 #include "Graphes/Graphe_Adjacence.h"
 
@@ -66,6 +66,7 @@ void test_dfs_kosaraju(){
     std::stack<int> dfs = graphe->dfs(0, new bool[8]{0});
     std::cout << "La taille doit etre de 8 : " << dfs.size() << std::endl;
     afficher_pile(dfs);
+    free(graphe);
 }
 
 /**
@@ -87,10 +88,11 @@ void test_Kosaraju_liste(){
     graphe->ajouterLien(6,5);
     graphe->ajouterLien(7,3);
     graphe->ajouterLien(7,6);
-    std::vector<std::vector<int>> kosaraju = Kosaraju::kosaraju(graphe);
-    std::cout << "nombre de CFC : " << kosaraju.size() << std::endl;
+    CFC_Implementation * kosaraju = new Kosaraju();
+    std::vector<std::set<int>> * resultat = kosaraju->CFC(graphe);
+    std::cout << "nombre de CFC : " << resultat->size() << std::endl;
     int compteur = 0;
-    for(auto i = kosaraju.begin(); i != kosaraju.end(); i++){
+    for(auto i = resultat->begin(); i != resultat->end(); i++){
         std::cout << "CFC numero " << compteur << std::endl;
         compteur++;
         for(auto j = i->begin(); j!= i->end(); *j++){
@@ -98,6 +100,7 @@ void test_Kosaraju_liste(){
         }
         std::cout << std::endl;
     }
+    free(graphe);
 }
 void test_Kosaraju_adjacence(){
     Graphe_Adjacence * graphe = new Graphe_Adjacence(8);
@@ -115,10 +118,11 @@ void test_Kosaraju_adjacence(){
     graphe->ajouterLien(6,5);
     graphe->ajouterLien(7,3);
     graphe->ajouterLien(7,6);
-    std::vector<std::vector<int>> kosaraju = Kosaraju::kosaraju(graphe);
-    std::cout << "nombre de CFC : " << kosaraju.size() << std::endl;
+    CFC_Implementation * kosaraju = new Kosaraju();
+    std::vector<std::set<int>> * resultat = kosaraju->CFC(graphe);
+    std::cout << "nombre de CFC : " << resultat->size() << std::endl;
     int compteur = 0;
-    for(auto i = kosaraju.begin(); i != kosaraju.end(); i++){
+    for(auto i = resultat->begin(); i != resultat->end(); i++){
         std::cout << "CFC numero " << compteur << std::endl;
         compteur++;
         for(auto j = i->begin(); j!= i->end(); *j++){
@@ -126,6 +130,7 @@ void test_Kosaraju_adjacence(){
         }
         std::cout << std::endl;
     }
+    free(kosaraju);
 }
 
 void test_transpose(){
@@ -162,8 +167,8 @@ void test_Tarjan_liste(){
     graphe->ajouterLien(6,5);
     graphe->ajouterLien(7,3);
     graphe->ajouterLien(7,6);
-    Tarjan * tarjan = new Tarjan();
-    std::vector<std::vector<int>> * resultat = tarjan->tarjan(graphe);
+    CFC_Implementation * tarjan = new Tarjan();
+    std::vector<std::set<int>> * resultat = tarjan->CFC(graphe);
     std::cout << "nombre de CFC : " << resultat->size() << std::endl;
     int compteur = 0;
     for(auto i = resultat->begin(); i != resultat->end(); i++){
@@ -196,8 +201,8 @@ void test_Gabow_liste(){
     graphe->ajouterLien(6,5);
     graphe->ajouterLien(7,3);
     graphe->ajouterLien(7,6);
-    Gabow * gabow = new Gabow(graphe->nb_noeuds);
-    std::vector<std::vector<int>> * resultat = gabow->gabow(graphe);
+    CFC_Implementation * gabow = new Gabow(graphe->nb_noeuds);
+    std::vector<std::set<int>> * resultat = gabow->CFC(graphe);
     std::cout << "nombre de CFC : " << resultat->size() << std::endl;
     int compteur = 0;
     for(auto i = resultat->begin(); i != resultat->end(); i++){
@@ -222,10 +227,12 @@ void test_liste_gabow(){
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheListe(i);
         start = std::clock();
-        Gabow * gabow = new Gabow(graphe->nb_noeuds);
-        gabow->gabow(graphe);
+        CFC_Implementation * gabow = new Gabow(graphe->nb_noeuds);
+        gabow->CFC(graphe);
         duration = std::clock() - start;
         std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
+        free(graphe);
+        free(gabow);
     }
 }
 
@@ -236,9 +243,11 @@ void test_liste_kosaraju(){
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheListe(i);
         start = std::clock();
-        Kosaraju::kosaraju(graphe);
+        CFC_Implementation * kosaraju = new Kosaraju();
+        kosaraju->CFC(graphe);
         duration = std::clock() - start;
         std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
+        free(graphe);
     }
 }
 
@@ -249,10 +258,12 @@ void test_liste_tarjan(){
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheListe(i);
         start = std::clock();
-        Tarjan tarjan;
-        tarjan.tarjan(graphe);
+        CFC_Implementation * tarjan = new Tarjan();
+        tarjan->CFC(graphe);
         duration = std::clock() - start;
         std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
+        free(graphe);
+        free(tarjan);
     }
 }
 
@@ -264,10 +275,12 @@ void test_adjacence_gabow(){
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheAdjacence(i);
         start = std::clock();
-        Gabow * gabow = new Gabow(graphe->nb_noeuds);
-        gabow->gabow(graphe);
+        CFC_Implementation * gabow = new Gabow(graphe->nb_noeuds);
+        gabow->CFC(graphe);
         duration = std::clock() - start;
         std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
+        free(graphe);
+        free(gabow);
     }
 }
 
@@ -278,7 +291,8 @@ void test_adjacence_kosaraju(){
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheAdjacence(i);
         start = std::clock();
-        Kosaraju::kosaraju(graphe);
+        CFC_Implementation * kosaraju = new Kosaraju();
+        kosaraju->CFC(graphe);
         duration = std::clock() - start;
         std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
     }
@@ -291,10 +305,12 @@ void test_adjacence_tarjan(){
     for(int i = 100; i < 10000; i = i + 10){
         Graphe * graphe = GraphGenerator::genererGrapheAdjacence(i);
         start = std::clock();
-        Tarjan tarjan;
-        tarjan.tarjan(graphe);
+        CFC_Implementation * tarjan = new Tarjan();
+        tarjan->CFC(graphe);
         duration = std::clock() - start;
         std::cout << i << " " << duration  / (double) CLOCKS_PER_SEC<< std::endl;
+        free(graphe);
+        free(tarjan);
     }
 }
 
@@ -311,10 +327,11 @@ void test_Kosaraju_Liste2(){
     graphe->ajouterLien(2,6);
     graphe->ajouterLien(2,3);
     graphe->ajouterLien(7,6);
-    std::vector<std::vector<int>> kosaraju = Kosaraju::kosaraju(graphe);
-    std::cout << "nombre de CFC : " << kosaraju.size() << std::endl;
+    CFC_Implementation * kosaraju = new Kosaraju();
+    std::vector<std::set<int>> * resultat = kosaraju->CFC(graphe);
+    std::cout << "nombre de CFC : " << resultat->size() << std::endl;
     int compteur = 0;
-    for(auto i = kosaraju.begin(); i != kosaraju.end(); i++){
+    for(auto i = resultat->begin(); i != resultat->end(); i++){
         std::cout << "CFC numero " << compteur << std::endl;
         compteur++;
         for(auto j = i->begin(); j!= i->end(); *j++){
@@ -322,6 +339,7 @@ void test_Kosaraju_Liste2(){
         }
         std::cout << std::endl;
     }
+    free(graphe);
 }
 
 int main(int argc, char *argv[]) {
@@ -358,7 +376,9 @@ int main(int argc, char *argv[]) {
         printf("\t-kosaraju : algorithme kosaraju\n");
         printf("\t-tarjan : algorithme tarjan\n");
         printf("\n");
-        test_Kosaraju_Liste2();
+        test_Gabow_liste();
+        test_Tarjan_liste();
+        test_Kosaraju_liste();
     }
     return 0;
 }

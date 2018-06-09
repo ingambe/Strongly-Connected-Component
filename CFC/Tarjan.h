@@ -6,17 +6,20 @@
 #define GRAPHES_TARJAN_H
 
 
-#include "Graphes/Graphe.h"
+#include "../Graphes/Graphe.h"
+#include "CFC_Implementation.h"
 
-class Tarjan {
+class Tarjan : public CFC_Implementation {
 public:
+    Tarjan();
+    ~Tarjan();
     int num;
     std::stack<int> * P;
-    std::vector<std::vector<int>> * partition;
+    std::vector<std::set<int>> * partition;
     bool * dansP;
     int * numSommet;
     int * numAccessible;
-    std::vector<std::vector<int>> * tarjan(Graphe * graphe);
+    std::vector<std::set<int>> * CFC(Graphe * graphe);
     void parcours(Graphe * graphe, int v);
 };
 

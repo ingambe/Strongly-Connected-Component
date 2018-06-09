@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /snap/clion/22/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /snap/clion/22/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/ingambe/CLionProjects/CFC/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/22/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/22/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,32 +123,113 @@ graphes/fast:
 	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/build
 .PHONY : graphes/fast
 
-Gabow.o: Gabow.cpp.o
+CFC/CFC_Implementation.o: CFC/CFC_Implementation.cpp.o
 
-.PHONY : Gabow.o
+.PHONY : CFC/CFC_Implementation.o
 
 # target to build an object file
-Gabow.cpp.o:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Gabow.cpp.o
-.PHONY : Gabow.cpp.o
+CFC/CFC_Implementation.cpp.o:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/CFC_Implementation.cpp.o
+.PHONY : CFC/CFC_Implementation.cpp.o
 
-Gabow.i: Gabow.cpp.i
+CFC/CFC_Implementation.i: CFC/CFC_Implementation.cpp.i
 
-.PHONY : Gabow.i
+.PHONY : CFC/CFC_Implementation.i
 
 # target to preprocess a source file
-Gabow.cpp.i:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Gabow.cpp.i
-.PHONY : Gabow.cpp.i
+CFC/CFC_Implementation.cpp.i:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/CFC_Implementation.cpp.i
+.PHONY : CFC/CFC_Implementation.cpp.i
 
-Gabow.s: Gabow.cpp.s
+CFC/CFC_Implementation.s: CFC/CFC_Implementation.cpp.s
 
-.PHONY : Gabow.s
+.PHONY : CFC/CFC_Implementation.s
 
 # target to generate assembly for a file
-Gabow.cpp.s:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Gabow.cpp.s
-.PHONY : Gabow.cpp.s
+CFC/CFC_Implementation.cpp.s:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/CFC_Implementation.cpp.s
+.PHONY : CFC/CFC_Implementation.cpp.s
+
+CFC/Gabow.o: CFC/Gabow.cpp.o
+
+.PHONY : CFC/Gabow.o
+
+# target to build an object file
+CFC/Gabow.cpp.o:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Gabow.cpp.o
+.PHONY : CFC/Gabow.cpp.o
+
+CFC/Gabow.i: CFC/Gabow.cpp.i
+
+.PHONY : CFC/Gabow.i
+
+# target to preprocess a source file
+CFC/Gabow.cpp.i:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Gabow.cpp.i
+.PHONY : CFC/Gabow.cpp.i
+
+CFC/Gabow.s: CFC/Gabow.cpp.s
+
+.PHONY : CFC/Gabow.s
+
+# target to generate assembly for a file
+CFC/Gabow.cpp.s:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Gabow.cpp.s
+.PHONY : CFC/Gabow.cpp.s
+
+CFC/Kosaraju.o: CFC/Kosaraju.cpp.o
+
+.PHONY : CFC/Kosaraju.o
+
+# target to build an object file
+CFC/Kosaraju.cpp.o:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Kosaraju.cpp.o
+.PHONY : CFC/Kosaraju.cpp.o
+
+CFC/Kosaraju.i: CFC/Kosaraju.cpp.i
+
+.PHONY : CFC/Kosaraju.i
+
+# target to preprocess a source file
+CFC/Kosaraju.cpp.i:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Kosaraju.cpp.i
+.PHONY : CFC/Kosaraju.cpp.i
+
+CFC/Kosaraju.s: CFC/Kosaraju.cpp.s
+
+.PHONY : CFC/Kosaraju.s
+
+# target to generate assembly for a file
+CFC/Kosaraju.cpp.s:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Kosaraju.cpp.s
+.PHONY : CFC/Kosaraju.cpp.s
+
+CFC/Tarjan.o: CFC/Tarjan.cpp.o
+
+.PHONY : CFC/Tarjan.o
+
+# target to build an object file
+CFC/Tarjan.cpp.o:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Tarjan.cpp.o
+.PHONY : CFC/Tarjan.cpp.o
+
+CFC/Tarjan.i: CFC/Tarjan.cpp.i
+
+.PHONY : CFC/Tarjan.i
+
+# target to preprocess a source file
+CFC/Tarjan.cpp.i:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Tarjan.cpp.i
+.PHONY : CFC/Tarjan.cpp.i
+
+CFC/Tarjan.s: CFC/Tarjan.cpp.s
+
+.PHONY : CFC/Tarjan.s
+
+# target to generate assembly for a file
+CFC/Tarjan.cpp.s:
+	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/CFC/Tarjan.cpp.s
+.PHONY : CFC/Tarjan.cpp.s
 
 GraphGenerator.o: GraphGenerator.cpp.o
 
@@ -258,60 +339,6 @@ Graphes/Graphe_Liste.cpp.s:
 	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Graphes/Graphe_Liste.cpp.s
 .PHONY : Graphes/Graphe_Liste.cpp.s
 
-Kosaraju.o: Kosaraju.cpp.o
-
-.PHONY : Kosaraju.o
-
-# target to build an object file
-Kosaraju.cpp.o:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Kosaraju.cpp.o
-.PHONY : Kosaraju.cpp.o
-
-Kosaraju.i: Kosaraju.cpp.i
-
-.PHONY : Kosaraju.i
-
-# target to preprocess a source file
-Kosaraju.cpp.i:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Kosaraju.cpp.i
-.PHONY : Kosaraju.cpp.i
-
-Kosaraju.s: Kosaraju.cpp.s
-
-.PHONY : Kosaraju.s
-
-# target to generate assembly for a file
-Kosaraju.cpp.s:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Kosaraju.cpp.s
-.PHONY : Kosaraju.cpp.s
-
-Tarjan.o: Tarjan.cpp.o
-
-.PHONY : Tarjan.o
-
-# target to build an object file
-Tarjan.cpp.o:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Tarjan.cpp.o
-.PHONY : Tarjan.cpp.o
-
-Tarjan.i: Tarjan.cpp.i
-
-.PHONY : Tarjan.i
-
-# target to preprocess a source file
-Tarjan.cpp.i:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Tarjan.cpp.i
-.PHONY : Tarjan.cpp.i
-
-Tarjan.s: Tarjan.cpp.s
-
-.PHONY : Tarjan.s
-
-# target to generate assembly for a file
-Tarjan.cpp.s:
-	$(MAKE) -f CMakeFiles/graphes.dir/build.make CMakeFiles/graphes.dir/Tarjan.cpp.s
-.PHONY : Tarjan.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -346,11 +373,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... graphes"
 	@echo "... edit_cache"
-	@echo "... Gabow.o"
-	@echo "... Gabow.i"
-	@echo "... Gabow.s"
+	@echo "... graphes"
+	@echo "... CFC/CFC_Implementation.o"
+	@echo "... CFC/CFC_Implementation.i"
+	@echo "... CFC/CFC_Implementation.s"
+	@echo "... CFC/Gabow.o"
+	@echo "... CFC/Gabow.i"
+	@echo "... CFC/Gabow.s"
+	@echo "... CFC/Kosaraju.o"
+	@echo "... CFC/Kosaraju.i"
+	@echo "... CFC/Kosaraju.s"
+	@echo "... CFC/Tarjan.o"
+	@echo "... CFC/Tarjan.i"
+	@echo "... CFC/Tarjan.s"
 	@echo "... GraphGenerator.o"
 	@echo "... GraphGenerator.i"
 	@echo "... GraphGenerator.s"
@@ -363,12 +399,6 @@ help:
 	@echo "... Graphes/Graphe_Liste.o"
 	@echo "... Graphes/Graphe_Liste.i"
 	@echo "... Graphes/Graphe_Liste.s"
-	@echo "... Kosaraju.o"
-	@echo "... Kosaraju.i"
-	@echo "... Kosaraju.s"
-	@echo "... Tarjan.o"
-	@echo "... Tarjan.i"
-	@echo "... Tarjan.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

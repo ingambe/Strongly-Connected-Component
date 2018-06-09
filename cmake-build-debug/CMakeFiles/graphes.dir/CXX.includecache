@@ -6,15 +6,47 @@
 
 #IncludeRegexTransform: 
 
-/home/ingambe/CLionProjects/CFC/Gabow.cpp
-Gabow.h
-/home/ingambe/CLionProjects/CFC/Gabow.h
+/home/ingambe/CLionProjects/CFC/CFC/CFC_Implementation.cpp
+CFC_Implementation.h
+/home/ingambe/CLionProjects/CFC/CFC/CFC_Implementation.h
 
-/home/ingambe/CLionProjects/CFC/Gabow.h
+/home/ingambe/CLionProjects/CFC/CFC/CFC_Implementation.h
 vector
 -
-Graphes/Graphe.h
+set
+-
+../Graphes/Graphe.h
 /home/ingambe/CLionProjects/CFC/Graphes/Graphe.h
+
+/home/ingambe/CLionProjects/CFC/CFC/Gabow.cpp
+Gabow.h
+/home/ingambe/CLionProjects/CFC/CFC/Gabow.h
+
+/home/ingambe/CLionProjects/CFC/CFC/Gabow.h
+../Graphes/Graphe.h
+/home/ingambe/CLionProjects/CFC/Graphes/Graphe.h
+CFC_Implementation.h
+/home/ingambe/CLionProjects/CFC/CFC/CFC_Implementation.h
+
+/home/ingambe/CLionProjects/CFC/CFC/Kosaraju.cpp
+Kosaraju.h
+/home/ingambe/CLionProjects/CFC/CFC/Kosaraju.h
+
+/home/ingambe/CLionProjects/CFC/CFC/Kosaraju.h
+../Graphes/Graphe.h
+/home/ingambe/CLionProjects/CFC/Graphes/Graphe.h
+CFC_Implementation.h
+/home/ingambe/CLionProjects/CFC/CFC/CFC_Implementation.h
+
+/home/ingambe/CLionProjects/CFC/CFC/Tarjan.cpp
+Tarjan.h
+/home/ingambe/CLionProjects/CFC/CFC/Tarjan.h
+
+/home/ingambe/CLionProjects/CFC/CFC/Tarjan.h
+../Graphes/Graphe.h
+/home/ingambe/CLionProjects/CFC/Graphes/Graphe.h
+CFC_Implementation.h
+/home/ingambe/CLionProjects/CFC/CFC/CFC_Implementation.h
 
 /home/ingambe/CLionProjects/CFC/GraphGenerator.cpp
 GraphGenerator.h
@@ -37,6 +69,8 @@ stack
 -
 vector
 -
+set
+-
 
 /home/ingambe/CLionProjects/CFC/Graphes/Graphe_Adjacence.cpp
 Graphe_Adjacence.h
@@ -47,29 +81,11 @@ Graphe.h
 /home/ingambe/CLionProjects/CFC/Graphes/Graphe.h
 
 /home/ingambe/CLionProjects/CFC/Graphes/Graphe_Liste.cpp
-algorithm
--
 Graphe_Liste.h
 /home/ingambe/CLionProjects/CFC/Graphes/Graphe_Liste.h
 
 /home/ingambe/CLionProjects/CFC/Graphes/Graphe_Liste.h
 Graphe.h
-/home/ingambe/CLionProjects/CFC/Graphes/Graphe.h
-
-/home/ingambe/CLionProjects/CFC/Kosaraju.cpp
-Kosaraju.h
-/home/ingambe/CLionProjects/CFC/Kosaraju.h
-
-/home/ingambe/CLionProjects/CFC/Kosaraju.h
-Graphes/Graphe.h
-/home/ingambe/CLionProjects/CFC/Graphes/Graphe.h
-
-/home/ingambe/CLionProjects/CFC/Tarjan.cpp
-Tarjan.h
-/home/ingambe/CLionProjects/CFC/Tarjan.h
-
-/home/ingambe/CLionProjects/CFC/Tarjan.h
-Graphes/Graphe.h
 /home/ingambe/CLionProjects/CFC/Graphes/Graphe.h
 
 /home/ingambe/CLionProjects/CFC/main.cpp
@@ -81,12 +97,12 @@ ctime
 -
 Graphes/Graphe_Liste.h
 /home/ingambe/CLionProjects/CFC/Graphes/Graphe_Liste.h
-Kosaraju.h
-/home/ingambe/CLionProjects/CFC/Kosaraju.h
-Tarjan.h
-/home/ingambe/CLionProjects/CFC/Tarjan.h
-Gabow.h
-/home/ingambe/CLionProjects/CFC/Gabow.h
+CFC/Kosaraju.h
+/home/ingambe/CLionProjects/CFC/CFC/Kosaraju.h
+CFC/Tarjan.h
+/home/ingambe/CLionProjects/CFC/CFC/Tarjan.h
+CFC/Gabow.h
+/home/ingambe/CLionProjects/CFC/CFC/Gabow.h
 GraphGenerator.h
 /home/ingambe/CLionProjects/CFC/GraphGenerator.h
 Graphes/Graphe_Adjacence.h

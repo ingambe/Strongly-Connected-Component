@@ -11,9 +11,36 @@ int min(int a, int b){
     return b;
 }
 
-std::vector<std::vector<int>> * Tarjan::tarjan(Graphe *graphe) {
-    num = 0;
+Tarjan::Tarjan() {
     P = new std::stack<int>();
+    num = 0;
+    partition = new std::vector<std::set<int>>();
+}
+
+Tarjan::~Tarjan() {
+    if(P!=NULL){
+        delete[] P;
+    }
+    P = NULL;
+    if(numAccessible != NULL){
+        delete[] numAccessible;
+    }
+    numAccessible = NULL;
+    if(numSommet != NULL){
+        delete[] numSommet;
+    }
+    numSommet = NULL;
+    if(dansP != NULL){
+        delete[] dansP;
+    }
+    dansP = NULL;
+    if(partition != NULL){
+        delete partition;
+    }
+    partition = NULL;
+}
+
+std::vector<std::set<int>> * Tarjan::CFC(Graphe *graphe) {
     numAccessible = new int[graphe->nb_noeuds];
     numSommet = new int[graphe->nb_noeuds];
     dansP = new bool[graphe->nb_noeuds];
@@ -22,7 +49,6 @@ std::vector<std::vector<int>> * Tarjan::tarjan(Graphe *graphe) {
         numSommet[i] = -1;
         dansP[i] = false;
     }
-    partition = new std::vector<std::vector<int>>();
     for(int i = 0; i < graphe->nb_noeuds; i++){
         if(numSommet[i] == -1){
             parcours(graphe, i);
@@ -47,13 +73,13 @@ void Tarjan::parcours(Graphe *graphe, int v) {
         }
     }
     if(numAccessible[v] == numSommet[v]){
-        std::vector<int> C;
+        std::set<int> C;
         int w;
         do {
             w = P->top();
             P->pop();
             dansP[w] = false;
-            C.emplace_back(w);
+            C.insert(w);
         }while(w!=v);
         partition->emplace_back(C);
     }
