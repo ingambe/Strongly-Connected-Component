@@ -5,7 +5,7 @@
 #ifndef GRAPHES_GRAPHGENERATOR_H
 #define GRAPHES_GRAPHGENERATOR_H
 
-#define NB_NOEUD 100
+#define NB_NOEUD 500
 
 #include "Graphes/Graphe.h"
 
