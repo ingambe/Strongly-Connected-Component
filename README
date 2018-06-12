@@ -1,0 +1,7 @@
+Pour lancer ce programme:
+ALler dans le dossier "cmake-build-release"
+Executer la commande make
+Puis executer l'éxécutable "graphes" généré
+
+Si vous voulez lancer les tests de temps d'éxécutions et générer les graphes automatiquements.
+Vous pouvez lancer le script "run.sh" qui créera dans le dossier les graphes correspondants.
