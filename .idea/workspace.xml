@@ -13,10 +13,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b575c1d1-2485-428c-9493-427b220ae75e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/temps_executions/matrice_kosaraju.png" beforeDir="false" afterPath="$PROJECT_DIR$/temps_executions/matrice_kosaraju.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temps_executions/matrice_kosaraju.txt" beforeDir="false" afterPath="$PROJECT_DIR$/temps_executions/matrice_kosaraju.txt" afterDir="false" />
-    </list>
+    <list default="true" id="b575c1d1-2485-428c-9493-427b220ae75e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
     <ignored path="$PROJECT_DIR$/cmake-build-relwithdebinfo/" />
@@ -30,11 +27,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="363" column="44" lean-forward="true" selection-start-line="363" selection-start-column="44" selection-end-line="363" selection-end-column="44" />
+              <caret line="363" column="42" selection-start-line="363" selection-start-column="29" selection-end-line="363" selection-end-column="42" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -42,10 +39,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kosaraju.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Kosaraju.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CFC/Kosaraju.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="26">
               <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
             </state>
           </provider>
@@ -168,11 +165,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="993" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
     <option name="y" value="25" />
-    <option name="width" value="927" />
-    <option name="height" value="1055" />
+    <option name="width" value="907" />
+    <option name="height" value="789" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -256,7 +253,7 @@
       <workItem from="1528727780816" duration="6070000" />
       <workItem from="1528752652781" duration="5870000" />
       <workItem from="1528761836442" duration="3245000" />
-      <workItem from="1528810284580" duration="1172000" />
+      <workItem from="1528810284580" duration="1447000" />
     </task>
     <task id="LOCAL-00001" summary="debug">
       <created>1527680286522</created>
@@ -339,13 +336,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48125000" />
+    <option name="totallyTimeSpent" value="48400000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="993" y="25" width="927" height="1055" extended-state="4" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3329646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16448088" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -702,16 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="363" column="44" lean-forward="true" selection-start-line="363" selection-start-column="44" selection-end-line="363" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Graphes/Graphe_Adjacence.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -728,8 +715,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CFC/Kosaraju.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="26">
           <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="363" column="42" selection-start-line="363" selection-start-column="29" selection-end-line="363" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
